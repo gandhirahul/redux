@@ -132,10 +132,10 @@ You can always write a function that generates an action creator:
 
 ```js
 function makeActionCreator(type, ...argNames) {
-  return function (...args) {
+  return function () {
     let action = { type }
     argNames.forEach((arg, index) => {
-      action[argNames[index]] = args[index]
+      action[argNames[index]] = argNames[index]
     })
     return action
   }
